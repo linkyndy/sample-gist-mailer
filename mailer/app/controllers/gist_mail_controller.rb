@@ -1,4 +1,4 @@
-class MailController < ApplicationController
+class GistMailController < ApplicationController
 	def new
 	end
 

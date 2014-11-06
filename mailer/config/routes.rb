@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  root 'mail#new'
+  root 'gist_mail#new'
 
-  post 'confirm' => 'mail#confirm'
-  post 'send' => 'mail#send'
+  post 'confirm' => 'gist_mail#confirm'
+  post 'send' => 'gist_mail#send'
 end

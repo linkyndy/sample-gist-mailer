@@ -1,4 +1,4 @@
-class Mail
+class GistMail
 	include ActiveModel::Validations
 
 	attr_accessor :name, :email, :confirm_email, :gist_url, :country, :city
