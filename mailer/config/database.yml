@@ -80,6 +80,4 @@ test:
 #
 production:
   <<: *default
-  database: mailer_production
-  username: mailer
-  password: <%= ENV['MAILER_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
