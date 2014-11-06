@@ -5,6 +5,6 @@ class GistMailController < ApplicationController
 	def confirm
 	end
 
-	def send
+	def send_mail
 	end
 end
