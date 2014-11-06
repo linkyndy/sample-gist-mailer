@@ -1,7 +1,7 @@
 class GistMail
 	include ActiveModel::Validations
 
-	attr_accessor :name, :email, :confirm_email, :gist_url, :country, :city
+	attr_accessor :name, :email, :email_confirmation, :gist_url, :country, :city
 
 	validates :name, presence: true
 	validates :email, with: /@/, confirmation: true, presence: true
