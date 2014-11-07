@@ -16,7 +16,7 @@ class GistMail < ActiveRecord::Base
 	validates :city_name, presence: true
 
 	validate do
-		errors.add(:country, 'Invalid country') unless Country.exists?(name: self.country_name)
-		errors.add(:city, 'Invalid city') unless City.where(name: self.city_name).first.country.name == self.country_name
+		errors.add(:country_name, 'Invalid country') unless Country.exists?(name: self.country_name)
+		errors.add(:city_name, 'Invalid city') unless City.where(name: self.city_name).first.country.name == self.country_name
 	end
 end
