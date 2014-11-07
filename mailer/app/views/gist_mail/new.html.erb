@@ -1,1 +1,10 @@
 <h1>New</h1>
+
+<%= form_for :gist_mail, url: {action: 'confirm'} do |f| %>
+	<%= f.text_field :name %>
+	<%= f.email_field :email %>
+	<%= f.email_field :email_confirmation %>
+	<%= f.url_field :gist_url %>
+	<%= f.collection_select(:country_name, Country.all, :name, :name, prompt: true) %>
+	<%= f.select(:city_name, [], prompt: true) %>
+<% end %>
