@@ -7,7 +7,8 @@ class GistMailController < ApplicationController
 		@gist_mail = GistMail.new(gist_mail_params)
 
 		if @gist_mail.valid?
-			redirect_to 'confirm'
+			session[:data] = @gist_mail.attributes
+			redirect_to '/confirm'
 		else
 			render 'new'
 		end
