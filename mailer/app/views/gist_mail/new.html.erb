@@ -1,10 +1,41 @@
 <h1>New</h1>
 
-<%= form_for :gist_mail, url: {action: 'confirm'} do |f| %>
+<%= form_for :gist_mail do |f| %>
+	<%= f.label :name %>
 	<%= f.text_field :name %>
+	<% if @gist_mail.errors[:name] %>
+		<%= @gist_mail.errors[:name].join("\n") %>
+	<% end %>
+
+	<%= f.label :email %>
 	<%= f.email_field :email %>
+	<% if @gist_mail.errors[:email] %>
+		<%= @gist_mail.errors[:email].join("\n") %>
+	<% end %>
+
+	<%= f.label :email_confirmation %>
 	<%= f.email_field :email_confirmation %>
+	<% if @gist_mail.errors[:email_confirmation] %>
+		<%= @gist_mail.errors[:email_confirmation].join("\n") %>
+	<% end %>
+
+	<%= f.label :gist_url %>
 	<%= f.url_field :gist_url %>
+	<% if @gist_mail.errors[:gist_url] %>
+		<%= @gist_mail.errors[:gist_url].join("\n") %>
+	<% end %>
+
+	<%= f.label :country_name %>
 	<%= f.collection_select(:country_name, Country.all, :name, :name, prompt: true) %>
+	<% if @gist_mail.errors[:country_name] %>
+		<%= @gist_mail.errors[:country_name].join("\n") %>
+	<% end %>
+
+	<%= f.label :city_name %>
 	<%= f.select(:city_name, [], prompt: true) %>
+	<% if @gist_mail.errors[:city_name] %>
+		<%= @gist_mail.errors[:city_name].join("\n") %>
+	<% end %>
+
+	<%= f.submit %>
 <% end %>
